@@ -1,4 +1,4 @@
-class User < ApplicationController
+class UsersController < ApplicationController
   def index
     @users = User.all
     render json: @users
@@ -50,4 +50,4 @@ class User < ApplicationController
    def user_params
      params.require(:user).permit(:firstname, :middlename, :lastname, :username, :address, :city, :state, :zip, :phonenumber, :email, :encrypted_password, :is_lister)
    end
-end    
+end
