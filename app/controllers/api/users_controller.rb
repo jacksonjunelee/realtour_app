@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   def index
     @users = User.all
     render json: @users
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      render nothing: true
+      render json: { errors: @user.errors.full_messages }, status: 422
     end
   end
 
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if @user.update()
       render json: @user
     else
-      render nothing: true
+      render json: { errors: @user.errors.full_messages }, status: 422
     end
   end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     if @user.destroy
       render json: @user
     else
-      render nothing: true
+      render json: { errors: @user.errors.full_messages }, status: 422
     end
   end
 
