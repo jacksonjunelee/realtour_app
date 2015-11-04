@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  namespace :api, defaults: { format: :json} do
-    resources :users
+  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sesssions', unlocks: 'users/unlocks', passwords: 'users/passwords', confirmations: 'users/confirmations'}
+  namespace :api, defaults: {format: :json} do
+    resources :users, except: [:new, :create]
     resources :listings
   end
   # The priority is based upon order of creation: first created -> highest priority.
