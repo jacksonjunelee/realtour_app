@@ -1,4 +1,4 @@
-class ListingsController < ApplicationController
+class Api::ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
@@ -20,7 +20,7 @@ class ListingsController < ApplicationController
     if @listing.save
       render json: @listing
     else
-      render nothing: true
+      render json: { errors: @listing.errors.full_messages }, status: 422
     end
   end
 
@@ -34,7 +34,7 @@ class ListingsController < ApplicationController
 		if @listing.update()
 			render json: @listing
 		else
-			render nothing: true
+			render json: { errors: @listing.errors.full_messages }, status: 422
 		end
   end
 
@@ -43,7 +43,7 @@ class ListingsController < ApplicationController
     if @listing.destroy
       render json: @listing
     else
-      render nothing: true
+      render json: { errors: @listing.errors.full_messages }, status: 422
     end
   end
 

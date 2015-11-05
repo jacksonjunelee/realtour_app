@@ -1,26 +1,12 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   def index
     @users = User.all
     render json: @users
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:listings).find(params[:id])
     render json: @user
-  end
-
-  def new
-    @user = User.new
-    render json: @user
-  end
-
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      render json: @user
-    else
-      render nothing: true
-    end
   end
 
   def edit
@@ -33,7 +19,7 @@ class UsersController < ApplicationController
     if @user.update()
       render json: @user
     else
-      render nothing: true
+      render json: { errors: @user.errors.full_messages }, status: 422
     end
   end
 
@@ -42,7 +28,7 @@ class UsersController < ApplicationController
     if @user.destroy
       render json: @user
     else
-      render nothing: true
+      render json: { errors: @user.errors.full_messages }, status: 422
     end
   end
 

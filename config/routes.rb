@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, :path_prefix => 'me'
-  resources :users
-  resources :listings
+  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sesssions', unlocks: 'users/unlocks', passwords: 'users/passwords', confirmations: 'users/confirmations'}
+  namespace :api, defaults: {format: :json} do
+    resources :users, except: [:new, :create]
+    resources :listings
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
