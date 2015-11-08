@@ -14,7 +14,12 @@ before_action :configure_sign_up_params, only: [:create]
 
   # POST /resource
   # def create
-  #   super
+    #   respond_to do |format|
+    #     format.json {
+    #       warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
+    #       render :status => 200, :json => { :error => "Success" }
+    #     }
+    # end
   # end
 
   # GET /resource/edit

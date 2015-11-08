@@ -1,9 +1,36 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sesssions', unlocks: 'users/unlocks', passwords: 'users/passwords', confirmations: 'users/confirmations'}
-  namespace :api, defaults: {format: :json} do
-    resources :users, except: [:new, :create]
-    resources :listings
+  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions', unlocks: 'users/unlocks', passwords: 'users/passwords', confirmations: 'users/confirmations'}
+  # , skip: :all
+  # devise_scope :user do
+  #   post "/users/sign_in" => "users/sessions#create", as: :user_session
+  #   delete "/users/sign_out" => "users/sessions#destroy", as: :destroy_user_session
+  #   post "/users/password" => "users/passwords#create", as: :user_password
+  #   patch "/users/password" => "users/passwords#update"
+  #   put "/users/password" => "users/passwords#update"
+  #   post "/users" => "users/registrations#create"
+  #   patch "/users" => "users/registrations#update"
+  #   put "/users" => "users/registrations#update"
+  #   delete "/users" => "users/registrations#destroy"
+  #   post '/users/confirmation' => 'users/confirmations#create', as: :user_confirmation
+  #   post '/users/unlock' => 'users/unlocks#create', as: :user_unlock
+  # end
+
+  # controllers: {registrations: 'users/registrations', sessions: 'users/sessions', unlocks: 'users/unlocks', passwords: 'users/passwords', confirmations: 'users/confirmations'}
+  namespace :api, path: '', constraints: {subdomain: 'api'}, defaults: {format: :json} do
+    namespace :v1 do
+      resources :users, except: [:new, :create]
+      resources :listings
+      resources :conversations do
+        resources :messages
+       end
+   end
   end
+
+  namespace :api, path: '', constraints: {subdomain: 'api'} do
+  namespace :v1 do
+    resources :events
+  end
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
