@@ -1,12 +1,16 @@
 Rails.application.configure do
   # NEED TO CHANGE WHEN GO TO production
   # config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :address => "127.0.0.1",
-  #   :port    => 25,
-  #   :domain  => 'yourdomain.com'
-  # }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port    => 587,
+    :user_name => 'emial',
+    :password => 'passwords',
+    :authentication => 'plain',
+    :enable_starttls_auto => true
+    # :domain  => 'yourdomai'
+  }
 
   # Settings specified here will take precedence over those in config/application.rb.
 

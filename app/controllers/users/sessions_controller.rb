@@ -1,16 +1,28 @@
 class Users::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
+clear_respond_to  
 respond_to :json
 respond_to :html, only: []
 respond_to :xml, only: []
   # GET /resource/sign_in
   # def new
-  #   super
+
+    # respond_to do |format|
+    #   format.json {
+    #     warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
+    #     render :status => 200, :json => { :error => "Success" }
+    #   }
+    # end
   # end
 
   # POST /resource/sign_in
   # def create
-  #   super
+  #   respond_to do |format|
+  #     format.json {
+  #       warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
+  #       render :status => 200, :json => { :error => "Success" }
+  #     }
+  #   end
   # end
 
   # DELETE /resource/sign_out
