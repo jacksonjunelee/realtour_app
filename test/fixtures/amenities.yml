@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  air_conditioning: false
+  internet: false
+  tv: false
+  heating: false
+  wireless_internet: false
+  cable_tv: false
+  kitchen: false
+  hot_tub: false
+  dryer: false
+  elevator_in_building: false
+  balcony: false
+  washer: false
+  free_parking: false
+  fireplace: false
+  pool: false
+  gym: false
+  doorman: false
+
+two:
+  air_conditioning: false
+  internet: false
+  tv: false
+  heating: false
+  wireless_internet: false
+  cable_tv: false
+  kitchen: false
+  hot_tub: false
+  dryer: false
+  elevator_in_building: false
+  balcony: false
+  washer: false
+  free_parking: false
+  fireplace: false
+  pool: false
+  gym: false
+  doorman: false

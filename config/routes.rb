@@ -19,10 +19,14 @@ Rails.application.routes.draw do
   namespace :api, path: '', constraints: {subdomain: 'api'}, defaults: {format: :json} do
     namespace :v1 do
       resources :users, except: [:new, :create]
-      resources :listings
+      resources :listings do
+        collection do
+          get 'search' => 'listings#basic_search'
+        end
       resources :conversations do
         resources :messages
        end
+     end
    end
   end
 

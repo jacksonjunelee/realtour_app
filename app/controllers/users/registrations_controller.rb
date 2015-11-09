@@ -15,6 +15,7 @@ before_action :configure_sign_up_params, only: [:create]
   # POST /resource
   # def create
     #   respond_to do |format|
+    #     binding.pry
     #     format.json {
     #       warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
     #       render :status => 200, :json => { :error => "Success" }
@@ -59,9 +60,10 @@ before_action :configure_sign_up_params, only: [:create]
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    # super(resource)
+    render json: 'moo'
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

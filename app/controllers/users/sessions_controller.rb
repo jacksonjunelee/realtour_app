@@ -1,6 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
-clear_respond_to  
+clear_respond_to
 respond_to :json
 respond_to :html, only: []
 respond_to :xml, only: []
@@ -16,14 +16,19 @@ respond_to :xml, only: []
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   respond_to do |format|
-  #     format.json {
-  #       warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
-  #       render :status => 200, :json => { :error => "Success" }
-  #     }
-  #   end
-  # end
+  def create
+  resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
+    #  set_flash_message(:notice, :signed_in) if is_navigational_format?
+     sign_in(resource_name, resource)
+     respond_to do |format|
+      #  format.html { respond_with resource, :location => after_sign_in_path_for(resource) }
+       format.json {
+          return render :json => {  :success => true,
+            :user => resource
+          }
+       }
+     end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
