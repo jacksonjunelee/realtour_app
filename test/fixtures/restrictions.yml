@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  smoking: false
+  pets: false
+  kid_friendly: false
+  wheelchair: false
+  events: false
+
+two:
+  smoking: false
+  pets: false
+  kid_friendly: false
+  wheelchair: false
+  events: false

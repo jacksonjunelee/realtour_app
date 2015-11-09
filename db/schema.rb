@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105005526) do
+ActiveRecord::Schema.define(version: 20151109061728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "amenities", force: :cascade do |t|
+    t.string   "amenity_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "amenities_listings", id: false, force: :cascade do |t|
+    t.integer "amenity_id", null: false
+    t.integer "listing_id", null: false
+  end
+
+  add_index "amenities_listings", ["amenity_id", "listing_id"], name: "index_amenities_listings_on_amenity_id_and_listing_id", using: :btree
+  add_index "amenities_listings", ["listing_id", "amenity_id"], name: "index_amenities_listings_on_listing_id_and_amenity_id", using: :btree
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -27,26 +41,46 @@ ActiveRecord::Schema.define(version: 20151105005526) do
   add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
 
   create_table "listings", force: :cascade do |t|
-    t.string   "address",          default: "", null: false
-    t.string   "city",             default: "", null: false
-    t.string   "state",            default: "", null: false
-    t.string   "borough",          default: "", null: false
-    t.integer  "zip",                           null: false
-    t.string   "building_name",    default: "", null: false
-    t.string   "apt_num",          default: "", null: false
-    t.string   "room_type",        default: "", null: false
+    t.string   "address",                default: "", null: false
+    t.string   "city",                   default: "", null: false
+    t.string   "state",                  default: "", null: false
+    t.string   "borough",                default: "", null: false
+    t.integer  "zip",                                 null: false
+    t.string   "building_name",          default: "", null: false
+    t.string   "apt_num",                default: "", null: false
+    t.string   "room_type",              default: "", null: false
+    t.integer  "bedroom"
+    t.integer  "bathroom"
+    t.string   "property_type"
+    t.integer  "area"
+    t.string   "minimum_stay"
+    t.date     "move_in"
+    t.text     "the_space"
+    t.text     "the_neighborhood"
+    t.boolean  "furnished"
     t.datetime "list_date"
     t.boolean  "active"
     t.datetime "inactive_date"
     t.datetime "modified_date"
     t.integer  "price"
-    t.integer  "decimal"
-    t.string   "rent_or_sublease", default: "", null: false
+    t.string   "rent_or_sublease",       default: "", null: false
     t.integer  "guest_capacity"
     t.integer  "user_id"
+    t.string   "floor_map_file_name"
+    t.string   "floor_map_content_type"
+    t.integer  "floor_map_file_size"
+    t.datetime "floor_map_updated_at"
   end
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree
+
+  create_table "listings_restrictions", id: false, force: :cascade do |t|
+    t.integer "listing_id",     null: false
+    t.integer "restriction_id", null: false
+  end
+
+  add_index "listings_restrictions", ["listing_id", "restriction_id"], name: "index_listings_restrictions_on_listing_id_and_restriction_id", using: :btree
+  add_index "listings_restrictions", ["restriction_id", "listing_id"], name: "index_listings_restrictions_on_restriction_id_and_listing_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
@@ -59,6 +93,12 @@ ActiveRecord::Schema.define(version: 20151105005526) do
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
+  create_table "restrictions", force: :cascade do |t|
+    t.string   "restriction_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "firstname",              default: "",    null: false

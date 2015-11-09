@@ -9,11 +9,20 @@ class CreateListings < ActiveRecord::Migration
       t.string :building_name,      null:false, default: ""
       t.string :apt_num,            null:false, default: ""
       t.string :room_type,          null:false, default: ""
+      t.integer :bedroom
+      t.integer :bathroom
+      t.string :property_type
+      t.integer :area
+      t.string :minimum_stay
+      t.date :move_in
+      t.text :the_space
+      t.text :the_neighborhood
+      t.boolean :furnished
       t.datetime :list_date
       t.boolean :active
       t.datetime :inactive_date
       t.datetime :modified_date
-      t.integer :price,             :decimal, precision: 5
+      t.integer :price
       t.string :rent_or_sublease,   null:false, default: ""
       t.integer :guest_capacity
       t.references :user

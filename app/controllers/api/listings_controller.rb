@@ -47,8 +47,17 @@ class Api::v1::ListingsController < ApplicationController
     end
   end
 
+  def basic_search
+    @listings = Listing.where(borough: params[:borough], room_type: params[:room_type], price: params[:min_price]..params[:max_price])
+    render json: @listings
+  end
+
+  def filter
+    @listing = Listing.where()
+  end
+
   private
    def listing_params
-     params.require(:listing).permit(:address, :city, :state, :borough, :zip, :building_name, :apt_num, :list_date, :active, :inactive_date, :modified_date, :price, :rent_or_sublease, :guest_capacity)
+     params.require(:listing).permit(:address, :city, :state, :borough, :zip, :building_name, :apt_num, :list_date, :active, :inactive_date, :room_type, :modified_date, :price, :rent_or_sublease, :guest_capacity)
    end
 end
