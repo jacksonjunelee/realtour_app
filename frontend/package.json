@@ -1,0 +1,14 @@
+{
+  "name": "realtour-frontend",
+  "version": "1.0.0",
+  "description": "Frontend build for reaotour nyc",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjlee5266/realtour_app"
+  },
+  "author": "Winson Yuan, Wesley Yu",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
