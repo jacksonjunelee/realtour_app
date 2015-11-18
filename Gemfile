@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.2"
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -24,9 +24,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'rails-api'
-gem "paperclip", "~> 4.3"
-gem 'passenger', '~> 5.0', '>= 5.0.21', group: :production
-
+gem 'paperclip', '~> 4.3'
+gem 'figaro'
+gem 'puma'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,4 +46,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
