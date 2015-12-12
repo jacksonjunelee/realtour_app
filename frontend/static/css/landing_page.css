@@ -1,0 +1,184 @@
+/*
+	font-family: Montserrat, sans-serif;
+	turquoise color: #6bcbc5;
+	base font size: 16px;
+	USE EMS!!!
+
+
+*/
+
+.clearfix {
+
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+html body {
+	font-family: Montserrat, sans-serif;
+	font-size: 16px;
+	box-sizing: border-box;
+	height: 100vh;
+}
+
+.flexbox {
+	display: flex;
+}
+
+.flexbox__title {
+	width: 100%;
+	color: #6bcbc5;
+	font-size: 1.5rem;
+}
+
+.flexbox__subtitle {
+	width: 100%;
+	color: #8eeee8;
+	font-size: 1rem;
+	padding-top: 1.5rem;
+	padding-bottom: 2rem;
+}
+
+.flexbox__title--center-alignment {
+	text-align: center;
+}
+
+.top-nav {
+	color: #6bcbc5;	
+	width: 100%;
+	background-color: white;
+	/*border: 1px solid blue;*/
+	min-height: 4rem;
+	position: fixed;
+	z-index: 999;
+}
+
+.top-nav__company-logo {
+	float: left;
+	font-size: 1.6rem;
+	/*border: 1px solid red;*/
+	vertical-align: middle;
+	margin-top: 1rem;
+	margin-left: 10%;
+}
+
+.top-nav__navigation-panel {
+	float: right;
+	font-size: 0.85rem;
+	height: 100%;
+	margin-right: 8%;
+}
+
+.top-nav__navigation-panel__button {
+	display: inline-block;
+	/*border: 1px solid red;*/
+	height: 4rem;
+	padding: 1.5rem 0 1.5rem 1.5rem;
+}
+
+#video-hero {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover; 
+}
+
+.main-container {
+	width: 100%;
+	height: 100%;
+}
+
+.main-tagline {
+	color: #6bcbc5;
+	letter-spacing: 0.25rem;
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	text-align: center;
+	position: relative;
+	padding-top: 10rem;
+}
+
+.signup-form {
+	text-align: center;
+	margin-top: 1.5rem;
+}
+
+.signup-form__field {
+	border-radius: 3px;
+	border: none;
+	height: 2.5rem;
+}
+
+.signup-form__submit {
+	border: none;
+	-webkit-box-shadow: 0 6px 0 0 green; 
+	box-shadow: 0 6px 0 0 green;
+	border-radius: 3px;
+	height: 2.5rem;
+	background-color: #f6d156;
+	transition: 1s;
+	margin-top: -100px;
+}
+
+.signup-form__submit:active {
+	box-shadow: 0 2px;
+}
+
+.sheet {
+	min-height: 90%;
+}
+
+.sheet2 {
+
+}
+
+.sheet2__flexbox {
+	flex-direction: row;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	justify-content: center;
+	padding: 2rem 5rem 5rem 5rem;
+	background-color: rgba(255,255,255,0.9);
+}
+
+.sheet2__flexbox__card {
+	background-color: white;
+	height: 20rem;
+	width: 20rem;
+	/*border: 1px solid black;*/
+	margin: 1rem 2rem;
+	-webkit-box-shadow: 1px 0px 20px 0 rgba(0,0,0,0.3);
+	box-shadow: 1px 0px 20px 0 rgba(0,0,0,0.3);
+}
+
+.sheet2__flexbox__card--font {
+	color: #6bcbc5;
+}
+
+.sheet2__flexbox__card__image {
+	display: block;
+	max-height: 11rem;
+	width: auto;
+	margin: 0 auto;
+}
+
+.sheet2__flexbox__card__title {
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.sheet2__flexbox__card__copy {
+	margin-top: 1rem;
+	font-size: 0.85rem;
+	line-height: 2rem;
+	padding: 0 2rem;
+
+}
