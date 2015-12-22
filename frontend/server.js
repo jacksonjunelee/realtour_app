@@ -4,7 +4,6 @@ var express = require("express")
 	, path = require("path");
 
 //set static assets
-app.use("/css", express.static(__dirname + '/css'))
 app.use("/static", express.static(__dirname + '/static'))
 
 // set homepage
