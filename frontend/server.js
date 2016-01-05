@@ -4,7 +4,9 @@ var express = require("express")
 	, path = require("path");
 
 //set static assets
-app.use("/static", express.static(__dirname + '/static'))
+app.use("/static", express.static(__dirname + '/static'));
+app.use("/build", express.static(__dirname + '/build'));
+app.use("/javascript", express.static(__dirname + '/javascript'));
 
 // set homepage
 app.get( '/', function( req, res ) {
