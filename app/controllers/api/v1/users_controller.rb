@@ -9,6 +9,13 @@ class Api::v1::UsersController < ApplicationController
     render json: @user
   end
 
+  def create
+    @user = @user.new(message_params)
+    if @user.save
+     render json: @user
+    end
+  end
+
   def edit
     @user = User.find(params[:id])
     render json: @user
