@@ -18,22 +18,22 @@
 		<header>
 			<nav class="top-nav clearfix">
 				<div class="top-nav__company-logo">realtour</div>
-<!-- 				<ul class="top-nav__navigation-panel">
+				<ul class="top-nav__navigation-panel">
 					<li class="top-nav__navigation-panel__button">List a Place</li>
 					<li class="top-nav__navigation-panel__button">Sign Up / Log In</li>
-				</ul> -->
+				</ul>
 			</nav>
 			<div id="video-container">
 		        <video id="video-hero" autoplay loop>
-		            <!-- <source src="static" type="video/webm"> -->
-					<source src="static/video/intro-demo.mp4" type="video/mp4">
-		        </video>
+		           <!-- <source src="static" type="video/webm"> -->
+							<source src="static/video/intro-demo.mp4" type="video/mp4">
+		        <!-- </video> -->
 			</div>
 		</header>
 		<div class="main-container">
 			<div class="sheet sheet1">
 				<h1 class="main-tagline">Your Virtual Realtor</h1>
-				<div>
+				<div class="form-section">
 					<form class="signup-form" action="javascript:void(0);" method="post">
 						<input class="signup-form__field" type="email" placeholder="test@test.com"/>
 						<input class="signup-form__submit" type="submit">
@@ -63,16 +63,52 @@
 				</div>
 			</div>
 		</div>
+		<footer class="footer-section clearfix" id="react-footer">
+			<h1>Some footer content</h1>
+		</footer>
 
     <!-- libraries -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 		<script src="build/react.js"></script>
     <script src="build/react-dom.js"></script>
-    <script src="build/JSXTransformer.js"></script>
+   	<!-- <script src="build/JSXTransformer.js"></script> -->
+   	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/JSXTransformer.js"></script>
 
-    <!-- main.js -->
+    <!-- js -->
     <script src="javascript/main.js"></script>
+    <script type="text/jsx" src="javascript/footer.js"></script>
 
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

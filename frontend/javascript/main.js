@@ -3,7 +3,7 @@
 var RealTourAPI = ( function () {
 
   var $submitBtn = $('.signup-form__submit'),
-        __Main_Url__ = 'http://localhost:3000/',
+        __Base_Url__ = 'https://localhost:3000/',
         __User_Endpoint__ = 'users';
   var testData = {
       firstname: "Wesley",
@@ -32,7 +32,7 @@ var RealTourAPI = ( function () {
       $.ajax({
           type: 'POST',
           crossDomain: true,
-          url: __Main_Url__ + __User_Endpoint__,
+          url: __Base_Url__ + __User_Endpoint__,
           dataType: 'json',
           data: testData,
       }).done(apiRequest);
