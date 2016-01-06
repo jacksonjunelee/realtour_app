@@ -158,6 +158,7 @@ html body {
 	background-color: white;
 	height: 20rem;
 	width: 20rem;
+	min-width: 20rem;
 	/*border: 1px solid black;*/
 	margin: 1rem 2rem;
 	-webkit-box-shadow: 1px 0px 20px 0 rgba(0,0,0,0.3);
@@ -195,7 +196,6 @@ footer.footer-section {
   color: #fff;
   height: 250px;
   position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
