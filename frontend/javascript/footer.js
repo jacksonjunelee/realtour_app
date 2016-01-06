@@ -1,7 +1,7 @@
 var FooterSection = React.createClass({
 	render: function () {
 		return (
-			<ul>
+			<ul class="global-footer">
 				<li>Some option1</li>
 				<li>Some option2</li>
 				<li>Some option3</li>
