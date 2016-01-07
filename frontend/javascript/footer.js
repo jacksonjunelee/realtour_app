@@ -46,13 +46,16 @@ var footerData = {
 var FooterSection = React.createClass({
 	render: function () {
 		var options = this.props.footerData.options;
-		
+
 		return (
-			<ul class="global-footer">
-				<li>Some option1</li>
-				<li>Some option2</li>
-				<li>Some option3</li>
-				<li>Some option4</li>
+			<ul className="global-footer">
+				<li className="">
+				{
+					options.map( function ( option ) {
+
+					});
+				}
+				</li>
 			</ul>
 		);
 	}
