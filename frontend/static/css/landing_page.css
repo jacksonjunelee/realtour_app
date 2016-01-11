@@ -197,7 +197,7 @@ html body {
 
 /* footer section */
 
-footer.footer-section {
+div.global-footer-section {
   background: #000;
   color: #fff;
   height: 250px;
