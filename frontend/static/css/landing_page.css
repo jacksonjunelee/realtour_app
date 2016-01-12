@@ -200,7 +200,7 @@ html body {
 div.global-footer-section {
   background: #000;
   color: #fff;
-  height: 250px;
+  padding-bottom: 3%;
   position: absolute;
   width: 100%;
 }
@@ -216,7 +216,8 @@ ul.global-footer-section--ul {
 
 ul.global-footer-section--ul {
   float: left;
-  margin: 2%;
+  margin-left: 5%;
+  margin-top: 3%;
 }
 
 li.global-footer-section--option-list {
@@ -224,7 +225,8 @@ li.global-footer-section--option-list {
 }
 
 ul.global-footer-section--ul.global-footer-right-sec {
-  margin-left: 15%;
+  margin-right: 15%;
+  float: right;
 }
 
 ul.global-footer-section--ul.global-footer-right-sec li {
