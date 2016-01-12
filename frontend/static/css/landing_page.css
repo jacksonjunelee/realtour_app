@@ -205,17 +205,31 @@ div.global-footer-section {
   width: 100%;
 }
 
+li.global-footer-section--option-list a {
+  text-decoration: none;
+  color: #fff;
+}
 
+ul.global-footer-section--ul {
+  float: left;
+}
 
+ul.global-footer-section--ul {
+  float: left;
+  margin: 2%;
+}
 
+li.global-footer-section--option-list {
+  padding: 10px;
+}
 
+ul.global-footer-section--ul.global-footer-right-sec {
+  margin-left: 15%;
+}
 
-
-
-
-
-
-
+ul.global-footer-section--ul.global-footer-right-sec li {
+  display: inline;
+}
 
 
 

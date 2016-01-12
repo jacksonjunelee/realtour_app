@@ -34,55 +34,90 @@
 			{
 				id: 7,
 				content: "facebook",
-				link: "#"
+				link: "#",
+				icon: ""
 			},
 			{
 				id: 8,
 				content: "twitter",
-				link: "#"
+				link: "#",
+				icon: ""
 			},
 			{
 				id: 9,
 				content: "instagram",
-				link: "#"
+				link: "#",
+				icon: ""
 			},
 			{
 				id: 10,
 				content: "pinterest",
-				link: "#"
+				link: "#",
+				icon: ""
 			}
 		]
 	};
 
-	var ListCmpt = React.createClass({
+	var ListItemCmpt = React.createClass({
 		render: function () {
+
+			var optName = this.props.option.content;
+			var optLink = this.props.option.link;
+
+			return (
+				<li className="global-footer-section--option-list">
+					<a href={ optLink }>
+						{ optName }
+					</a>
+				</li>
+			);
+
 		}
-	})
+	});
 
 	var FooterSection = React.createClass({
 		render: function () {
 			//var options = this.props.footerData.options;
 			var options = this.props.data.options;
-			console.log('this is it:', this)
+
 			return (
 				<div className="global-footer-section clearfix">
-					<ul>
+					<ul className="global-footer-section--ul global-footer-left-sec">
 						{
 							options.map( function ( option ) {
-								var optName = option.content;
-
-								return (
-									<li key={ option.id } className="global-footer-section--option-list">
-										<a href={ option.link }>
-											{ optName }
-										</a>
-									</li>
-								);
+								if ( option.id <= 4 ) {
+									return (
+										<ListItemCmpt key={ option.id } option={ option } />
+									);
+								}
+							})
+						}
+					</ul>
+					<ul className="global-footer-section--ul global-footer-mid-sec">
+						{
+							options.map( function ( option ) {
+								if ( option.id > 4 && option.id <= 6) {
+									return (
+										<ListItemCmpt key={ option.id } option={ option } />
+									);
+								}
+							})
+						}
+					</ul>
+					<ul className="global-footer-section--ul global-footer-right-sec">
+						{
+							options.map( function ( option ) {
+								if ( option.id > 6 ) {
+									return (
+										<ListItemCmpt key={ option.id } option={ option } />
+									);
+								}
 							})
 						}
 					</ul>
 				</div>
 			);
+
 		}
 	});
 
@@ -93,3 +128,20 @@
 
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
