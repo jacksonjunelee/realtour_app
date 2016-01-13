@@ -33,25 +33,25 @@
 			},
 			{
 				id: 7,
-				content: "facebook",
+				content: "Facebook",
 				link: "#",
 				icon: ""
 			},
 			{
 				id: 8,
-				content: "twitter",
+				content: "Twitter",
 				link: "#",
 				icon: ""
 			},
 			{
 				id: 9,
-				content: "instagram",
+				content: "Instagram",
 				link: "#",
 				icon: ""
 			},
 			{
 				id: 10,
-				content: "pinterest",
+				content: "Pinterest",
 				link: "#",
 				icon: ""
 			}

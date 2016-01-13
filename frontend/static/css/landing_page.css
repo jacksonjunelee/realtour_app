@@ -52,6 +52,7 @@ html body {
 	min-height: 4rem;
 	position: fixed;
 	z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .top-nav__company-logo {
@@ -116,11 +117,14 @@ html body {
 
 .signup-form__field {
 	border-radius: 3px;
-	border: none;
+	border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 	height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.25rem;
 }
 
-.signup-form__submit {
+.signup-button {
 	position: absolute;
 	border: none;
 	-webkit-box-shadow: 0 6px 0 0 darkorange;
@@ -130,10 +134,21 @@ html body {
 	background-color: #f6d156;
 	transition: 0.1s;
 	margin-top: -3px;
-	margin-left: 5px;
+    left: 50%;
+    line-height: 2.5rem;
+	margin-left: -69.5px;
+    padding: 0 1rem;
+    color: #414141;
+    text-transform: uppercase;
 }
 
-.signup-form__submit:active {
+.signup-button:hover {
+    text-decoration: none;
+    color: #414141;
+}
+
+
+.signup-button:active {
 	box-shadow: 0 1px 0 0 darkorange;
 	margin-top: 1px;
 	outline: none;
@@ -141,6 +156,7 @@ html body {
 
 .form-section {
   margin-bottom: 16%;
+  text-align: center;
 }
 
 .sheet {
@@ -206,6 +222,7 @@ div.global-footer-section {
 }
 
 li.global-footer-section--option-list a {
+  font-size: 0.85rem;
   text-decoration: none;
   color: #fff;
 }
