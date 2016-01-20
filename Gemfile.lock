@@ -190,7 +190,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.3)
-  pg
+  pg (= 0.18.4)
   pry-rails
   puma
   rails (= 4.2.3)
