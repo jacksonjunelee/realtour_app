@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 # Use CoffeeScript for .coffee assets and views
 #gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -28,7 +28,6 @@ gem 'paperclip', '~> 4.3'
 gem 'figaro'
 gem 'puma'
 gem 'execjs'
-gem 'therubyracer'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
